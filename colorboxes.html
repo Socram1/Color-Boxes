@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Boxes</title>
+    
+    <style>
+        body{
+            position:relative;
+            height: 100%;
+            line-height: 1;
+            background-color: black;
+            color: white;
+        }
+        #main{
+            width: 918px;
+            margin: 0 auto;
+        }
+        element.style{
+            z-index:1;
+            box-shadow:none;
+            background-color: rgb(red, green, blue);
+        }
+        div{
+            display:block;
+        }
+        .box{
+            position: relative;
+            z-index: 1;
+            float: left;
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+        } 
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="box" class="box"></div>
+        <div id="box2" class="box"></div>
+        <div class="box"></div>
+        <div class="box">
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
+<script>
+        //set boxes var which includes all instances of class "box"
+        var boxes = document.getElementsByClassName("box");
+        //set names var to equal names id
+        var names = document.getElementById("names");
+
+        //hexadecimal value random colors generator 
+        function getRandomColor(){
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for(var i = 0; i < 6; i++){
+                color += letters[Math.floor(Math.random()* 16)];
+            }
+            return color;
+        }
+        //this for loop iterates through each "box" class and applies eventlistener "mouseover"
+        for (var i = 0; i < boxes.length; i++) {
+            boxes[i].addEventListener('mouseover', function() {
+                var randomColor = getRandomColor();
+                this.style.backgroundColor = randomColor;
+                this.style.boxShadow = "0 0 12px white";
+            })
+        }
+        //goes thru and removes the box shadow effect added through previous loop process once "mouseleave" occurs
+        for (var i = 0; i < boxes.length; i++) {
+            boxes[i].addEventListener('mouseleave', function() {                
+                this.style.boxShadow = "none";
+            })
+        }
+        
+    </script>
